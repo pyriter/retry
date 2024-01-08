@@ -23,7 +23,7 @@ export class Retry<T> {
     let totalTime = 0;
     let lastResponse;
     while (retryCount < Math.min(MAX_RETRY, this.retry)) {
-      console.log(`Retry Executor. retryCount: ${retryCount} with timeout: ${timeout} and totalTime: ${totalTime}`);
+      console.debug(`Retry Executor. retryCount: ${retryCount} with timeout: ${timeout} and totalTime: ${totalTime}`);
       const {result, response} = await this.executeFunction();
       lastResponse = response;
       if (result) {
